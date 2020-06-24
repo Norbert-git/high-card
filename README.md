@@ -30,11 +30,18 @@ Create a browser-based game where a player plays cards against a computer.
 
 ### Functions to consider
 <em>These could easily be done with OOP as opposed to functional programming.</em>
+
 -Create a function to reorder the deck randomly
+
 -Create game logic to hold a player, and computer score
+
 -Create function to listen for the 'click event'
+
 -Create functions to determine the winnder of a round
+
 -Create a function to assign the computer, and the player a card
+
 -Do the neccessary DOM manipulation to display the cards played
+
 -Determine game logic to decide ona winner after a predetermined number of plays
 
