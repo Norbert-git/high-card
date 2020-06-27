@@ -1,3 +1,63 @@
+/* Classes */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px;
+}
+.logo {
+  width: 250px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.playerCard {
+  width: 120px;
+  height: 170px;
+  margin: 25px;
+}
+.computerCard {
+  width: 120px;
+  height: 170px;
+  margin: 25px;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: default;
+}
+.playerScore {
+  margin: 30px;
+}
+.computerScore {
+  margin: 30px;
+}
+
+.dealButton {
+  background-image: url(../images/dealbutton@3x.png);
+  width: 245px;
+  height: 93px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 20px;
+}
+
 body {
-  background-color: orange;
+  background-image: url('../images/Background.jpg');
+  background-size: 100vw 100vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
