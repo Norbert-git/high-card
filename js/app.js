@@ -1,14 +1,6 @@
 console.log('Sanity Check')
 
-// Get Card Assets
-let cards = []
-for (let i = 2; i < 15; i++) {
-    let img = document.createElement('img');
-    img.setAttribute("src", "./images/card" + i + ".png");
-    img.setAttribute("value", i);
-    cards.push(img);
-}
-
+/* Part 2 Code Here */
 // Game object
 let game = {
     // Player Score
@@ -17,14 +9,24 @@ let game = {
     CPUScore: 0,
     // Card Deck
     deck: [],
+    // Get Cards Method
+    getCards: function() {
+        this.deck = []
+        for (let i = 2; i < 15; i++) {
+            let img = document.createElement('img');
+            img.setAttribute("src", "./images/card" + i + ".png");
+            img.setAttribute("value", i);
+            this.deck.push(img);
+        }
+    },
     // Shuffle Method
     shuffle: function() {
-        game.deck = [...cards]
         game.deck.sort(function() { return 0.5 - Math.random() });
     },
     // Deal Method
     deal: function() {
         if (game.deck.length <= 2) {
+            game.getCards();
             game.shuffle();
         }
         let playerCard = document.querySelector('.playerCard')
@@ -32,15 +34,15 @@ let game = {
         newPlayerCard.setAttribute('class', 'playerCard');
         playerCard.parentElement.replaceChild(newPlayerCard, playerCard);
 
-        let computerCard = document.querySelector('.computerCard')
+        let computerCard = document.querySelector('.cpuCard')
         let newCPUCard = game.deck.shift();
-        newCPUCard.setAttribute('class', 'computerCard');
+        newCPUCard.setAttribute('class', 'cpuCard');
         computerCard.parentElement.replaceChild(newCPUCard, computerCard);
         game.checkScore();
     },
     checkScore: function() {
         let playerCard = document.querySelector('.playerCard');
-        let cpuCard = document.querySelector('.computerCard');
+        let cpuCard = document.querySelector('.cpuCard');
 
         if (parseInt(playerCard.getAttribute('value')) > parseInt(cpuCard.getAttribute('value'))) {
             game.playerScore++;
@@ -49,12 +51,13 @@ let game = {
         }
         else {
             game.CPUScore++;
-            let score = document.querySelector('.computerScore');
+            let score = document.querySelector('.cpuScore');
             score.innerHTML="Computer: " + game.CPUScore;
         }
     }
 }
 
+/* Part 1 Code Here */
 // Create container element
 let container = document.createElement('div');
 container.setAttribute("class", "container");
@@ -97,4 +100,5 @@ dealButton.setAttribute("class", "dealButton");
 document.body.appendChild(dealButton);
 dealButton.addEventListener("click", game.deal);
 
+game.getCards();
 game.shuffle();
