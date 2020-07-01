@@ -24,7 +24,7 @@ Create a browser-based card game where a player plays cards against a computer.
 ### Part 1: Programatically create game elements
  -Create a `div` with the class of `container` to contain all of the parts of the game.
 
- ```
+ ```javascript
 // Create container element
 let container = document.createElement('div');
 
@@ -36,7 +36,7 @@ document.body.appendChild(container)
 
  -Create two `img` tags that will show the player card, and the computer card. Set the class attribute to `playerCard` and `cpuCard`, append the card elements to the `container`:
 
-```
+```javascript
 // Create card elements
 let playerCard = document.createElement('img');
 playerCard.setAttribute('class','playerCard');
@@ -50,7 +50,7 @@ container.appendChild(playerCard);
 
  -Add a `div` with class `scoreContainer` and append to the document body:
 
- ```
+ ```javascript
 // Create Score Container
 let scoreContainer = document.createElement('div');
 scoreContainer.setAttribute('class','scoreContainer')
@@ -59,7 +59,7 @@ document.body.appendChild(scoreContainer);
 
  -Add two new `div` elements of class `playerScore` and `cpuScore`. Set the `innerHTML` to "Player: 0" and "CPU: 0"
 
-```
+```javascript
  // Create Player Score
 let playerScore = document.createElement('div');
 playerScore.setAttribute('class','playerScore');
@@ -71,7 +71,7 @@ scoreContainer.appendChild(playerScore);
 
  -Add a `button` with class `dealButton`, append to the document body:
 
- ```
+ ```javascript
 // Create Deal Button
 let dealButton = document.createElement('button');
 dealButton.setAttribute("class", "dealButton");
@@ -88,7 +88,7 @@ document.body.appendChild(dealButton);
 
 -Initialize the `game` object with all of its necessary attributes
 
-``` 
+```javascript
 let game = {
 
     // Player Score
@@ -103,7 +103,7 @@ let game = {
 ```
 -Create the `getCards()` function to parse the card images from `/images` into the `deck` array. For each `img` element, set attribute `src` to `./images/card#.png` , and set attribute `value` to `#`
 
-```
+```javascript
 // Get Cards Method
 getCards: function() {
     this.deck = []
@@ -119,7 +119,7 @@ getCards: function() {
 
 -Create a `shuffle()` function to shuffle the `deck` randomly
 
-```
+```javascript
 // Shuffle Method
 shuffle: function() {
     game.deck.sort(function() { return 0.5 - Math.random() });
@@ -130,7 +130,7 @@ shuffle: function() {
 
 <em>Hint: Use the array method `shift()` to remove a card from the game `deck`. Make sure the deck has enough cards to deal!</em>
 
-```
+```javascript
 // Deal Method
 deal: function() {
     // Check if deck is empty, reshuffle deck
@@ -161,7 +161,7 @@ deal: function() {
 -Create function to check and update the player score
 
 <em>Hint: you will use the `getAttribute('value')` method to get the card value. Make sure to use `parseInt()`, because the values are currently strings, we need to compare them as numbers.</em>
-```
+```javascript
 checkScore: function() {
     let playerCard = document.querySelector('.playerCard');
     let cpuCard = document.querySelector('.cpuCard');
