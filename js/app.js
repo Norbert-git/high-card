@@ -67,7 +67,7 @@ playerCard.setAttribute("class","playerCard");
 playerCard.setAttribute("src","./images/back.png");
 
 let computerCard = document.createElement('img');
-computerCard.setAttribute("class","computerCard");
+computerCard.setAttribute("class","cpuCard");
 computerCard.setAttribute("src","./images/back.png");
 
 // Append to Container
@@ -87,7 +87,7 @@ scoreContainer.appendChild(playerScore);
 
 // Create Computer score
 let computerScore = document.createElement('div');
-computerScore.setAttribute('class','computerScore');
+computerScore.setAttribute('class','cpuScore');
 computerScore.innerHTML="Computer: 0";
 scoreContainer.appendChild(computerScore);
 

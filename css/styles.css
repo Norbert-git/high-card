@@ -20,7 +20,7 @@
   height: 170px;
   margin: 25px;
 }
-.computerCard {
+.cpuCard {
   width: 120px;
   height: 170px;
   margin: 25px;
@@ -39,7 +39,7 @@
 .playerScore {
   margin: 30px;
 }
-.computerScore {
+.cpuScore {
   margin: 30px;
 }
 
