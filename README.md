@@ -106,12 +106,7 @@ let game = {
 ```javascript
 // Get Cards Method
 getCards: function() {
-    this.deck = []
-    for (let i = 2; i < 15; i++) {
-        let img = document.createElement('img');
-        img.setAttribute("src", "./images/card" + i + ".png");
-        img.setAttribute("value", i);
-        this.deck.push(img);
+
     }
 },
 ```
@@ -122,7 +117,7 @@ getCards: function() {
 ```javascript
 // Shuffle Method
 shuffle: function() {
-    game.deck.sort(function() { return 0.5 - Math.random() });
+
 },
 ```
 
@@ -133,28 +128,7 @@ shuffle: function() {
 ```javascript
 // Deal Method
 deal: function() {
-    // Check if deck is empty, reshuffle deck
-    if (game.deck.length <= 2) {
-        game.getCards();
-        game.shuffle();
-    }
 
-    // Get new card from deck
-    let newPlayerCard = game.deck.shift();
-
-    // Replace old card with new card
-    let playerCard = document.querySelector('.playerCard')
-    newPlayerCard.setAttribute('class', 'playerCard');
-    playerCard.parentElement.replaceChild(newPlayerCard, playerCard);
-
-    // do the same for cpuCard
-    let computerCard = document.querySelector('.cpuCard')
-    let newCPUCard = game.deck.shift();
-    newCPUCard.setAttribute('class', 'cpuCard');
-    computerCard.parentElement.replaceChild(newCPUCard, computerCard);
-
-    // check score
-    game.checkScore();
 },
 ```
 
@@ -163,18 +137,6 @@ deal: function() {
 <em>Hint: you will use the `getAttribute('value')` method to get the card value. Make sure to use `parseInt()`, because the values are currently strings, we need to compare them as numbers.</em>
 ```javascript
 checkScore: function() {
-    let playerCard = document.querySelector('.playerCard');
-    let cpuCard = document.querySelector('.cpuCard');
 
-    if (parseInt(playerCard.getAttribute('value')) > parseInt(cpuCard.getAttribute('value'))) {
-        game.playerScore++;
-        let score = document.querySelector('.playerScore');
-        score.innerHTML="Player: " + game.playerScore;
-    }
-    else {
-        game.CPUScore++;
-        let score = document.querySelector('.cpuScore');
-        score.innerHTML="CPU: " + game.CPUScore;
-    }
 }
 ```
