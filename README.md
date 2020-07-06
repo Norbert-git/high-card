@@ -112,7 +112,7 @@ getCards: function() {
 ```
 
 
--Create a `shuffle()` function to shuffle the `deck` randomly
+-Create a `shuffle()` function to shuffle the `deck`
 
 ```javascript
 // Shuffle Method
