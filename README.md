@@ -107,7 +107,6 @@ let game = {
 // Get Cards Method
 getCards: function() {
 
-    }
 },
 ```
 
